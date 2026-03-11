@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrostFlow ERP</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-stone-50 font-sans text-stone-900">
+    <div id="app" class="h-screen flex overflow-hidden">
+        <!-- Auth Container -->
+        <div id="auth-container" class="flex-1 flex items-center justify-center p-4">
+            <!-- Login Form -->
+            <div id="login-form" class="max-w-sm w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-black/5">
+                <div class="bg-stone-900 p-6 text-white text-center">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-white/10 rounded-full mb-3">
+                        <i data-lucide="shield-check" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h1 class="text-xl font-bold tracking-tight">FrostFlow ERP</h1>
+                    <p class="text-stone-400 text-xs mt-1">Cold Storage Management System</p>
+                </div>
+                <form id="login-form-element" class="p-6 space-y-4">
+                    <div id="login-error" class="hidden bg-red-50 text-red-600 p-3 rounded-lg text-sm border border-red-100"></div>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1">Username / Email / Phone</label>
+                            <input type="text" id="login-identifier" required class="w-full px-4 py-2 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none text-sm" placeholder="Enter credentials">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1">Password</label>
+                            <input type="password" id="login-password" required class="w-full px-4 py-2 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none text-sm" placeholder="••••••••">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-stone-500 uppercase tracking-wider mb-1">Role</label>
+                            <select id="login-role" class="w-full px-4 py-2 rounded-xl border border-stone-200 focus:ring-2 focus:ring-stone-900 outline-none bg-white text-sm">
+                                <option value="customer">Customer</option>
+                                <option value="supplier">Supplier</option>
+                                <option value="inventory">Inventory Manager</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="w-full bg-stone-900 text-white py-2.5 rounded-xl font-semibold hover:bg-stone-800 transition-colors flex items-center justify-center gap-2 text-sm">
+                        <i data-lucide="log-in" class="w-4 h-4"></i> Login
+                    </button>
+                    <div class="text-center pt-4 border-t border-stone-100 mt-4">
+                        <p class="text-[10px] text-stone-400 uppercase font-bold mb-2">New to FrostFlow?</p>
+                        <button type="button" id="go-to-register" class="w-full border-2 border-stone-900 text-stone-900 py-2 rounded-xl font-bold hover:bg-stone-50 transition-colors flex items-center justify-center gap-2 text-sm">
+                            <i data-lucide="user-plus" class="w-4 h-4"></i> Create Account
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Register Form (Hidden) -->
+            <div id="register-form" class="hidden max-w-sm w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-black/5">
+                <div class="bg-stone-900 p-6 text-white flex items-center gap-4">
+                    <button id="back-to-login" class="hover:bg-white/10 p-2 rounded-full transition-colors">
+                        <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                    </button>
+                    <div>
+                        <h1 class="text-xl font-bold tracking-tight">Create Account</h1>
+                        <p class="text-stone-400 text-xs">Join FrostFlow ERP</p>
+                    </div>
+                </div>
+                <form id="register-form-element" class="p-8 space-y-4">
+                    <div id="register-error" class="hidden bg-red-50 text-red-600 p-3 rounded-lg text-sm border border-red-100"></div>
+                    <div class="space-y-4">
+                        <input type="text" id="reg-username" placeholder="Username" required class="w-full px-4 py-2 rounded-xl border border-stone-200 outline-none">
+                        <input type="email" id="reg-email" placeholder="Email" required class="w-full px-4 py-2 rounded-xl border border-stone-200 outline-none">
+                        <input type="tel" id="reg-phone" placeholder="Phone" required class="w-full px-4 py-2 rounded-xl border border-stone-200 outline-none">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="password" id="reg-password" placeholder="Password" required class="w-full px-4 py-2 rounded-xl border border-stone-200 outline-none">
+                            <input type="password" id="reg-confirm" placeholder="Confirm" required class="w-full px-4 py-2 rounded-xl border border-stone-200 outline-none">
+                        </div>
+                        <select id="reg-role" class="w-full px-4 py-2 rounded-xl border border-stone-200 outline-none bg-white">
+                            <option value="customer">Customer</option>
+                            <option value="supplier">Supplier</option>
+                            <option value="inventory">Inventory Manager</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-stone-900 text-white py-3 rounded-xl font-semibold hover:bg-stone-800 transition-colors flex items-center justify-center gap-2 mt-4">
+                        <i data-lucide="send" class="w-5 h-5"></i> Send OTP
+                    </button>
+                </form>
+            </div>
+
+            <!-- OTP Form (Hidden) -->
+            <div id="otp-form" class="hidden max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-black/5 p-8 text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-stone-100 rounded-full mb-6">
+                    <i data-lucide="shield-check" class="text-stone-900 w-8 h-8"></i>
+                </div>
+                <h1 class="text-2xl font-bold tracking-tight mb-2">Verify OTP</h1>
+                <p class="text-stone-500 text-sm mb-8">Enter the 6-digit code sent to your email.</p>
+                <div id="otp-error" class="hidden bg-red-50 text-red-600 p-3 rounded-lg text-sm border border-red-100 mb-6"></div>
+                <div class="flex justify-between gap-2 mb-8">
+                    <input type="text" maxlength="1" class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-xl border border-stone-200 outline-none">
+                    <input type="text" maxlength="1" class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-xl border border-stone-200 outline-none">
+                    <input type="text" maxlength="1" class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-xl border border-stone-200 outline-none">
+                    <input type="text" maxlength="1" class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-xl border border-stone-200 outline-none">
+                    <input type="text" maxlength="1" class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-xl border border-stone-200 outline-none">
+                    <input type="text" maxlength="1" class="otp-input w-12 h-14 text-center text-2xl font-bold rounded-xl border border-stone-200 outline-none">
+                </div>
+                <button id="verify-otp-btn" class="w-full bg-stone-900 text-white py-3 rounded-xl font-semibold hover:bg-stone-800 transition-colors mb-4">Verify OTP</button>
+            </div>
+        </div>
+
+        <!-- Dashboard Container (Hidden) -->
+        <div id="dashboard-container" class="hidden flex-1 flex overflow-hidden">
+            <!-- Sidebar -->
+            <aside id="sidebar" class="w-64 bg-[#1e293b] text-white flex flex-col border-r border-white/5">
+                <div class="p-6 flex items-center gap-3 border-b border-white/5">
+                    <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                        <i data-lucide="shield-check" class="text-blue-400 w-5 h-5"></i>
+                    </div>
+                    <span id="sidebar-branding" class="text-lg font-bold tracking-tight text-white uppercase">ERP SYSTEM</span>
+                </div>
+                <nav id="sidebar-nav" class="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
+                    <!-- Nav items injected here -->
+                </nav>
+                <div class="p-4 border-t border-white/5">
+                    <button id="logout-btn" class="w-full flex items-center gap-4 px-4 py-3 text-stone-400 hover:bg-red-500/10 hover:text-red-400 rounded-xl transition-all">
+                        <i data-lucide="log-out" class="w-5 h-5"></i>
+                        <span class="font-medium">Logout</span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="flex-1 flex flex-col overflow-hidden">
+                <header class="h-20 bg-white border-b border-stone-200 px-8 flex items-center justify-between shrink-0">
+                    <div class="flex items-center gap-2 text-stone-500 text-sm">
+                        <span>Home</span>
+                        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        <span id="current-view-title" class="text-stone-900 font-medium capitalize">Dashboard</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="text-right">
+                            <p id="user-display-name" class="text-sm font-bold text-stone-900"></p>
+                            <p id="user-display-role" class="text-xs text-stone-500 capitalize"></p>
+                        </div>
+                        <div id="user-avatar" class="w-10 h-10 bg-stone-100 rounded-full border border-stone-200 flex items-center justify-center font-bold text-stone-600"></div>
+                    </div>
+                </header>
+                <div id="main-content-area" class="flex-1 overflow-y-auto p-8">
+                    <!-- Content injected here -->
+                </div>
+            </main>
+        </div>
+    </div>
+    <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@media print {
+    #sidebar, header, .no-print {
+        display: none !important;
+    }
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow: visible !important;
+    }
+    #main-content-area {
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+    .bg-[#1e293b] {
+        background-color: white !important;
+        color: black !important;
+    }
+}
