@@ -1,20 +1,56 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# FrostFlow ERP ❄️
 
-# Run and deploy your AI Studio app
+**FrostFlow ERP** is a comprehensive, role-based Cold Storage Management System designed to streamline operations for customers, suppliers, and inventory managers.
 
-This contains everything you need to run your app locally.
+![FrostFlow Banner](https://picsum.photos/seed/frostflow/1200/400)
 
-View your app in AI Studio: https://ai.studio/apps/3419db35-b2fd-403e-a8da-f0f5880bd737
+## 🚀 Features
 
-## Run Locally
+- **Role-Based Access Control**: Specialized dashboards for Customers, Suppliers, and Inventory Managers.
+- **Secure Authentication**: Integrated login and registration with OTP (One-Time Password) verification.
+- **Real-time Management**: Manage supply chains, inventory levels, and preorders efficiently.
+- **Modern UI**: Clean, responsive interface built with Tailwind CSS and Lucide icons.
+- **Robust Backend**: Powered by Node.js, Express, and SQLite for reliable data management.
 
-**Prerequisites:**  Node.js
+## 🛠️ Tech Stack
 
+- **Frontend**: HTML5, Tailwind CSS, JavaScript (ES6+)
+- **Backend**: Node.js, Express
+- **Database**: SQLite (Better-SQLite3)
+- **Icons**: Lucide React
+- **Build Tool**: Vite
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 💻 Local Setup
+
+To run this project on your local machine:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/sushma13927/FrostFlow-ERP.git
+   cd FrostFlow-ERP
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**:
+   Navigate to `http://localhost:3000`
+
+## 🌐 Deployment
+
+This application is ready for deployment on platforms like **Render**, **Railway**, or **Google Cloud Run**.
+
+### Deployment Configuration:
+- **Build Command**: `npm install && npm run build`
+- **Start Command**: `npm start`
+- **Environment Variables**: Ensure `NODE_ENV=production` is set in your hosting environment.
+
+---
+Built with ❤️ using Google AI Studio.
