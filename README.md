@@ -2,8 +2,6 @@
 
 **FrostFlow ERP** is a comprehensive, role-based Cold Storage Management System designed to streamline operations for customers, suppliers, and inventory managers.
 
-![FrostFlow Banner](https://picsum.photos/seed/frostflow/1200/400)
-
 ## 🚀 Features
 
 - **Role-Based Access Control**: Specialized dashboards for Customers, Suppliers, and Inventory Managers.
@@ -54,3 +52,4 @@ This application is ready for deployment on platforms like **Render**, **Railway
 
 ---
 Built with ❤️ using Google AI Studio.
+
