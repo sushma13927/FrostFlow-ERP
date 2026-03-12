@@ -1,9 +1,9 @@
-❄️ FrostFlow ERP
-Cold Storage Management System – User Guide
+# ❄️ FrostFlow ERP
+# Cold Storage Management System – User Guide
 
 FrostFlow ERP is a web-based application designed to manage cold storage inventory, suppliers, and customer orders. The system helps track stored products, manage supply activities, and allows customers to place orders through an easy dashboard.
 
-✨ Features
+# ✨ Features
 
 User Authentication – Secure login and registration system for users.
 
@@ -25,7 +25,7 @@ Responsive UI – Clean and modern interface built with Tailwind CSS.
 
 Secure Data Storage – Uses SQLite relational database for reliable data management.
 
-1️⃣ Software Required
+# 1️⃣ Software Required
 
 Before running the project, install the following software:
 
@@ -47,7 +47,7 @@ VS Code will be used to open and run the project.
 
 Use Google Chrome or any modern browser.
 
-2️⃣ Download the Project
+# 2️⃣ Download the Project
 
 Open the project repository:
 
@@ -63,7 +63,7 @@ Extract the ZIP file on your computer
 
 You will get a folder named FrostFlow-ERP.
 
-3️⃣ Open the Project in VS Code
+# 3️⃣ Open the Project in VS Code
 
 Open Visual Studio Code
 
@@ -75,7 +75,7 @@ Click Open
 
 Now the project files will appear in VS Code.
 
-4️⃣ Open the Terminal in VS Code
+# 4️⃣ Open the Terminal in VS Code
 
 In VS Code menu click Terminal
 
@@ -83,7 +83,7 @@ Select New Terminal
 
 A terminal window will open at the bottom of VS Code.
 
-5️⃣ Install Required Packages
+# 5️⃣ Install Required Packages
 
 In the terminal, type the following command:
 
@@ -93,7 +93,7 @@ This command installs all the required dependencies for the project.
 
 Wait until the installation finishes.
 
-6️⃣ Run the Application
+# 6️⃣ Run the Application
 
 After installation, start the project using the following command:
 
@@ -101,7 +101,7 @@ npm run dev
 
 This will start the FrostFlow ERP server.
 
-7️⃣ Open the Application
+# 7️⃣ Open the Application
 
 Open Google Chrome
 
@@ -113,7 +113,7 @@ Press Enter
 
 The FrostFlow ERP Login Page will appear.
 
-8️⃣ Create an Account
+# 8️⃣ Create an Account
 
 Click Register
 
@@ -137,7 +137,7 @@ Customer
 
 Submit the form.
 
-9️⃣ Login to the System
+# 9️⃣ Login to the System
 
 Enter your username or email
 
@@ -147,7 +147,7 @@ Click Login
 
 You will be redirected to your dashboard.
 
-🔟 System Usage
+# 🔟 System Usage
 Inventory Manager
 
 Monitor inventory levels
@@ -158,7 +158,7 @@ View suppliers and customers
 
 Receive low stock alerts
 
-Supplier
+# Supplier
 
 Add new products
 
@@ -168,7 +168,7 @@ Manage supply history
 
 View orders from customers
 
-Customer
+# Customer
 
 Browse products
 
@@ -186,7 +186,7 @@ CTRL + C
 
 in the VS Code terminal.
 
-🚀 Future Enhancements
+# 🚀 Future Enhancements
 
 The system can be improved with the following features in the future:
 
@@ -202,7 +202,7 @@ Multi-Language Support – Support multiple languages for wider accessibility.
 
 Mobile Application – Provide a mobile version for easier access.
 
-📌 Conclusion
+# 📌 Conclusion
 
 FrostFlow ERP provides a structured solution for managing cold storage operations. It allows inventory managers, suppliers, and customers to interact through a single system, improving inventory tracking and order management.
 
